@@ -1,31 +1,11 @@
-class Observer:
-    def update(self, message):
-        raise NotImplementedError
+from abc import ABC, abstractmethod
 
-class Observable:
-    def __init__(self):
-        self.observers = []
+class Observer(ABC):
 
-    def register(self, observer):
-        if not observer in self.observers:
-            self.observers.append(observer)
+    @abstractmethod
+    def update_temperature(self, temperature):
+        pass
 
-    def unregister(self, observer):
-        if observer in self.observers:
-            self.observers.remove(observer)
-
-    def unregister_all(self):
-        if self.observers:
-            del self.observers[:]
-
-    def update_observers(self, message):
-        for observer in self.observers:
-            observer.update(message)
-
-
-class ObserverImpl(Observer):
-    def __init__(self):
-        self.messages = []
-
-    def update(self, message):
-        self.messages.append(message)
+    @abstractmethod
+    def update_humidity(self, humidity):
+        pass
