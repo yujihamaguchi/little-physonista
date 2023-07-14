@@ -1,7 +1,7 @@
 # pylint: disable=C0116
 
 import unittest
-from little_pythonista.my_module import *
+from algorithm.algorithm import *
 
 
 class TestAdd(unittest.TestCase):

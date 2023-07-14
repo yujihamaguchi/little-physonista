@@ -1,7 +1,6 @@
 # pylint: disable=C0116
 from functools import reduce
 from operator import add
-from typing import Optional, Union
 
 # Q001: haskell の zip と同様の機能の関数 my_zip を書け （パラメータの数は可変であること）
 # zip :: [a] -> [b] -> [(a, b)]
