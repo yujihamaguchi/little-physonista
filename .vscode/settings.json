@@ -1,6 +1,7 @@
 {
     "python.testing.pytestArgs": [
-        "algorithm/tests"
+        "algorithm/tests",
+        "observer_pattern/tests",
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true
