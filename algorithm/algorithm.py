@@ -35,3 +35,36 @@ def qsort01(xs):
     lt = [_x for _x in rest if _x < x]
     ge = [_x for _x in rest if _x >= x]
     return sum([qsort01(lt), [x], qsort01(ge)], [])
+
+# Q004: Haskell の product と同様の機能の関数を書け(再帰を用いるパターン、 reduce を用いるパターン、 apply を用いるパターン)
+# product :: (Num a) => [a] -> a
+# product ns
+#     数値のリスト ns の全要素の積を返す。
+#         product [2, 3, 4]   = 24
+#         product [4, 5, 0]   = 0
+#         product []          = 1
+
+
+def product(ns):
+    return reduce(lambda acc, n: acc * n, ns, 1)
+
+
+# Q007: Haskell の last と同様の機能の関数 my_last を書け
+# last :: [a] -> a
+#     リストの最後の要素を返す。
+#         last [1,2,3]   = 3
+#         last []        = エラー
+def my_last(xs):
+    if not xs:
+        raise ValueError()
+    return list(reversed(xs))[0]
+
+
+# Q008: 偶数の長さを持つリストを半分ずつに分割する関数 halve を書け。
+def halve(xs):
+    length = len(xs)
+    if length == 0 or length % 2 != 0:
+        raise ValueError()
+    n = length // 2
+    return (xs[:n], xs[n:])
+
