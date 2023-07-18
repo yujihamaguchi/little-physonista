@@ -19,7 +19,7 @@ class SushiStoreTest(unittest.TestCase):
         simple_sushi_factory.create_sushi.return_value = sushi
 
         # Instantiate SushiStore with the mock factory
-        target = SushiStore(factory=simple_sushi_factory)
+        target = SushiStore(simple_sushi_factory)
 
         # Asserting the result
         self.assertEqual(target.order_sushi('Foo'), boxed_sushi)

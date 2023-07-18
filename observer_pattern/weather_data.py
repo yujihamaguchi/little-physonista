@@ -1,11 +1,11 @@
+from dataclasses import dataclass, field
 from .subject import Subject
 
+@dataclass
 class WeatherData(Subject):
-
-    def __init__(self):
-        self._observers = []
-        self._temperature = None
-        self._humidity = None
+    _observers: list = field(default_factory=list)
+    _temperature = None
+    _humidity = None
 
     def register(self, observer):
         self._observers.append(observer)

@@ -1,9 +1,9 @@
+from dataclasses import dataclass
 from simple_factory_pattern.simple_sushi_factory import SimpleSushiFactory
 
-
+@dataclass
 class SushiStore():
-    def __init__(self, factory: SimpleSushiFactory):
-        self._factory = factory
+    _factory: SimpleSushiFactory
 
     def order_sushi(self, type_of_sushi):
         sushi = self._factory.create_sushi(type_of_sushi)
