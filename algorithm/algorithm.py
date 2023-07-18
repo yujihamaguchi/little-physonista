@@ -67,4 +67,3 @@ def halve(xs):
         raise ValueError()
     n = length // 2
     return (xs[:n], xs[n:])
-
