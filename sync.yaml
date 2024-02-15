@@ -16,5 +16,6 @@ jobs:
       git config user.name "Yuji Hamaguchi"
       git remote add testrepo https://$(PAT)@github.com/yujihamaguchi/little-physonista.git || echo 'testrepo is already added'
       git merge --allow-unrelated-histories --no-edit testrepo/master
+      git fetch origin
       git push testrepo --all
     displayName: 'Sync Repository is done'
