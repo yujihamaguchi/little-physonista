@@ -24,5 +24,4 @@ jobs:
       git pull --rebase origin main
       echo "5"
       git push -f testrepo main
-      echo "6"
     displayName: 'Sync Repository is done'
