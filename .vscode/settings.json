@@ -1,0 +1,9 @@
+{
+    "python.testing.pytestArgs": [
+        "algorithm/tests",
+        "observer_pattern/tests",
+        "simple_factory_pattern/tests",
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}
