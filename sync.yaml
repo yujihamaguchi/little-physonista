@@ -10,6 +10,7 @@ jobs:
 - job: SyncRepository
   steps:
   - checkout: self
+    persistCredentials: true
 
   - script: |
       git config user.email "yuji.hamaguchi@avanade.com"
