@@ -14,7 +14,7 @@ jobs:
   - script: |
       git config user.email "yuji.hamaguchi@avanade.com"
       git config user.name "Yuji Hamaguchi"
-      git remote add testrepo https://$(PAT)@github.com/yujihamaguchi/little-physonista.git || echo 'testrepo is already added'
+      git remote add testrepo https://$(PAT)@github.com/yujihamaguchi/little-physonista.git || echo "testrepo is already added"
       git fetch testrepo main
       git checkout -b main
       git pull --rebase origin main
