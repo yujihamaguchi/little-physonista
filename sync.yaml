@@ -14,9 +14,15 @@ jobs:
   - script: |
       git config user.email "yuji.hamaguchi@avanade.com"
       git config user.name "Yuji Hamaguchi"
+      echo "1"
       git remote add testrepo https://$(PAT)@github.com/yujihamaguchi/little-physonista.git
+      echo "2"
       git fetch testrepo main
+      echo "3"
       git checkout -b main
+      echo "4"
       git pull --rebase origin main
+      echo "5"
       git push -f testrepo main
+      echo "6"
     displayName: 'Sync Repository is done'
