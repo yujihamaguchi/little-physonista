@@ -1,0 +1,20 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'windows-latest'
+
+jobs:
+- job: SyncRepository
+  steps:
+  - checkout: self
+
+  - script: |
+      git config user.email "yuji.hamaguchi@avanade.com"
+      git config user.name "Yuji Hamaguchi"
+      git remote add testrepo https://github.com/yujihamaguchi/little-physonista.git || echo 'testrepo is already added'
+      git merge --allow-unrelated-histories --no-edit testrepo/master
+      git push testrepo --all
+    displayName: 'Sync Repository is done'
