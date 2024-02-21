@@ -9,3 +9,5 @@ def plus_one(x):
 
 def test_plus_one():
     assert 2 == plus_one(1)
+
+""" foo """
