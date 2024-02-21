@@ -27,3 +27,9 @@ def minus_two(n):
 
 def test_minus_two():
     assert 0 == minus_two(2)
+
+def function_b(n):
+    return n
+
+def test_function_b():
+    assert 1 == function_b(1)
