@@ -21,3 +21,9 @@ def plus_two(n):
 
 def test_plus_two():
     assert 2 == plus_two(0)
+
+def minus_two(n):
+    return n - 2
+
+def test_minus_two():
+    assert 0 == minus_two(2)
