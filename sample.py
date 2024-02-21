@@ -15,3 +15,9 @@ def minus_one(n):
 
 def test_minus_one():
     assert 1 == minus_one(2)
+
+def plus_two(n):
+    return n + 2
+
+def test_plus_two():
+    assert 2 == plus_two(0)
