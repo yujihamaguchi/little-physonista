@@ -10,6 +10,8 @@ def plus_one(x):
 def test_plus_one():
     assert 2 == plus_one(1)
 
-""" foo """
-""" bar """
+def minus_one(n):
+    return n - 1
 
+def test_minus_one():
+    assert 1 == minus_one(2)
