@@ -9,3 +9,5 @@ def triple(n):
 
 def test_triple():
     assert 6 == triple(2)
+
+""" foo """
