@@ -33,3 +33,9 @@ def function_b(n):
 
 def test_function_b():
     assert 1 == function_b(1)
+
+def function_c(n):
+    return n
+
+def test_function_c():
+    assert 1 == function_b(1)
