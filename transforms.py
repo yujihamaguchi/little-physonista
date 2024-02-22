@@ -10,4 +10,8 @@ def triple(n):
 def test_triple():
     assert 6 == triple(2)
 
-""" foo """
+def minus_one(n):
+    return n - 1
+
+def test_minus_one():
+    assert 1 == minus_one(2)
