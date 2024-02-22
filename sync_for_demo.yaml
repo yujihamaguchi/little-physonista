@@ -1,12 +1,12 @@
 trigger:
   branches:
     include:
-      - main
+      - add_triple_func
 pool:
   vmImage: 'windows-latest'
 
 jobs:
-- job: SyncRepository
+- job: SyncRepositoryForDemo
   steps:
   - checkout: self
     persistCredentials: true
@@ -15,8 +15,8 @@ jobs:
       git config user.email "yuji.hamaguchi@avanade.com"
       git config user.name "Yuji Hamaguchi"
       git remote add testrepo https://$(PAT)@github.com/yujihamaguchi/little-physonista.git
-      git fetch testrepo main
-      git checkout -b main
-      git pull --rebase origin main
-      git push -f testrepo main
-    displayName: 'Sync Repository is done'
+      git fetch testrepo add_triple_func
+      git checkout -b add_triple_func
+      git pull --rebase origin add_triple_func
+      git push -f testrepo add_triple_func
+    displayName: 'Sync Repository for demo is done'
