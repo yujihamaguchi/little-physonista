@@ -3,3 +3,4 @@ def double(x):
 
 def test_double():
     assert 4 == double(2)
+""" foo """
