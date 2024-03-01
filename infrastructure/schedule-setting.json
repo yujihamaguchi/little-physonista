@@ -9,7 +9,7 @@
             "condition": "指定された時間・間隔 At 01:00am (Asia/Tokyo)"
         },
         {
-            "name": "(prod)Schedule Build for DataIntegration2",
+            "name": "(prod)Schedule Build for DataIntegration",
             "description": "本番向けビルドスケジュール",
             "RID": "ri.scheduler.main.schedule.f6ff0c9f-10a4-44f5-a65a-a55f14634851",
             "version": "d7a10fe97a59 (current)",
