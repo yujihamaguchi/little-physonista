@@ -1,7 +1,7 @@
 {
     "schedules": [
         {
-            "name": "NDSoft Honobono - Ingest",
+            "name": "NDSoft Honobono - Ingest2",
             "description": "データインジェストスケジュール",
             "RID": "ri.scheduler.main.schedule.adaef448-09cf-4006-941b-fcda8620efca",
             "version": "d7a10fe97a59 (current)",
