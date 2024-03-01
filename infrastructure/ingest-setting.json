@@ -1,7 +1,7 @@
 {
     "ingests": [
         {
-            "dataSetName": "blob_ingest2",
+            "dataSetName": "blob_ingest",
             "description": "インジェスト先Azure Blob コンテナ",
             "path": "/小田原福祉会-be776f",
             "updateVia": "1",
