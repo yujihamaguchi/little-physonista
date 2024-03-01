@@ -1,20 +1,20 @@
 {
-    "ingests": [
+    "schedules": [
         {
-            "dataSetName": "blob_ingest",
-            "description": "インジェスト先Azure Blob コンテナ",
-            "path": "/小田原福祉会-be776f",
-            "updateVia": "1",
-            "RID": "ri.foundry.main.dataset.73ddccdd-8d9a-496f-bd06-1d563894346b",
-            "schedule": "1"
+            "name": "NDSoft Honobono - Ingest",
+            "description": "データインジェストスケジュール",
+            "RID": "ri.scheduler.main.schedule.adaef448-09cf-4006-941b-fcda8620efca",
+            "version": "d7a10fe97a59 (current)",
+            "targetDataSet": "/小田原福祉会-be776f/DataSource - ほのぼのNEXT/datasets/raw/",
+            "condition": "指定された時間・間隔 At 01:00am (Asia/Tokyo)"
         },
         {
-            "dataSetName": "delete_blobs",
-            "description": "Azure Blobの古いファイルを削除するためのインジェストデータセット",
-            "path": "/小田原福祉会-be776f",
-            "updateVia": "1",
-            "RID": "ri.foundry.main.dataset.75688720-e6d8-42d6-9d94-74a492d0f016",
-            "schedule": "1"
-        }
+            "name": "(prod)Schedule Build for DataIntegration",
+            "description": "本番向けビルドスケジュール",
+            "RID": "ri.scheduler.main.schedule.f6ff0c9f-10a4-44f5-a65a-a55f14634851",
+            "version": "d7a10fe97a59 (current)",
+            "targetDataSet": "/小田原福祉会-be776f/DataSourceIntegration/jobs/",
+            "condition": "指定されたデータセットが更新された時 /小田原福祉会-be776f/DataSource - ほのぼのNEXT/datasets/raw"
+        }        
     ]
 }
