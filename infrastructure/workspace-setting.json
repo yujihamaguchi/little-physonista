@@ -4,7 +4,7 @@
             "name": "egaku CMC",
             "description": "egaku 開発環境（ ver 1.11.0 ）",
             "component": "Function Workshop",
-            "groups": ["1"]
+            "groups": ["1", "2"]
         },
         {
             "name": "egaku Top Page",
