@@ -1,7 +1,7 @@
 {
     "monitorings": [
         {
-            "viewName": "Junseien-Monitoring-View3",
+            "viewName": "Junseien-Monitoring-View",
             "description": "小田原福祉会のモニタリングビュー",
             "RID": "ri.data-health.main.monitoring-view.533d6394-c28f-44f3-b73f-93438f907b9c",
             "path": "/小田原福祉会-be776f/Monitoring/Junseien-Monitoring-View",
