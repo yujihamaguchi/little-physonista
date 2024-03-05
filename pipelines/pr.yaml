@@ -1,0 +1,11 @@
+pr:
+  branches:
+    include:
+    - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hey, you!
+  displayName: 'Run a one-line script'
