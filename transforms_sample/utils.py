@@ -7,6 +7,7 @@ def remove_leading_spaces(s: str) -> str:
 
 @pytest.mark.parametrize("test_input,expected", [
     ("  leading spaces", "leading spaces"),
+    ("leading spaces  ", "leading spaces  "),
     ("\tleading tab", "leading tab"),
     ("   \t mixed spaces and tab", "mixed spaces and tab"),
     ("no_leading_space", "no_leading_space"),
