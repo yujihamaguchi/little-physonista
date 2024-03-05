@@ -1,17 +1,13 @@
-def double(x):
-    return x * 2
+import pytest
 
-def test_double():
-    assert 4 == double(2)
+def remove_leading_spaces(s: str) -> str:
+    return s.lstrip()
 
-def triple(n):
-    return n * 3
-
-def test_triple():
-    assert 6 == triple(2)
-
-def minus_one(n):
-    return n - 1
-
-def test_minus_one():
-    assert 1 == minus_one(2)
+@pytest.mark.parametrize("test_input,expected", [
+    ("  leading spaces", "leading spaces"),
+    ("\tleading tab", "leading tab"),
+    ("   \t mixed spaces and tab", "mixed spaces and tab"),
+    ("no_leading_space", "no_leading_space")
+])
+def test_remove_leading_whitespace(test_input, expected):
+    assert remove_leading_spaces(test_input) == expected
