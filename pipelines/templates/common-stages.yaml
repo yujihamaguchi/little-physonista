@@ -4,7 +4,7 @@ stages:
   - job: LintJob
     displayName: 'Execute Lint'
     steps:
-    - template: templates/lint.yaml
+    - template: lint.yaml
 
 - stage: UnitTest
   condition: succeeded()
@@ -12,4 +12,4 @@ stages:
   - job: UnitTestJob
     displayName: 'Execute Unit Test'
     steps:
-    - template: templates/unit-test.yaml
+    - template: unit-test.yaml
