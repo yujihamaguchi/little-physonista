@@ -1,4 +1,5 @@
 steps:
+- template: python-setup.yaml
 
 - script: flake8 ./transforms_sample/utils.py
   displayName: 'Run Flake8'
