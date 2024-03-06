@@ -1,0 +1,15 @@
+stages:
+- stage: Lint
+  jobs:
+  - job: LintJob
+    displayName: 'Execute Lint'
+    steps:
+    - template: templates/lint.yaml
+
+- stage: UnitTest
+  condition: succeeded()
+  jobs:
+  - job: UnitTestJob
+    displayName: 'Execute Unit Test'
+    steps:
+    - template: templates/unit-test.yaml
