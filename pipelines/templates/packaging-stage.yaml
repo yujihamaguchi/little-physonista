@@ -1,3 +1,4 @@
+stages:
 - stage: Packaging
   condition: succeeded()
   jobs:
