@@ -5,5 +5,5 @@ steps:
       addToPath: true
   - script: python -m pip install --upgrade pip
     displayName: 'Upgrade pip'
-  - script: pip install ./transforms_sample/
+  - script: pip install ${{ parameters.PROJECT_ROOT_DIR }}
     displayName: 'Install libraries'
