@@ -1,12 +1,10 @@
 stages:
-- stage: Packaging
+- stage: Package
   condition: succeeded()
   jobs:
   - job: PackagingJob
-    displayName: 'Execute Packaging'
+    displayName: 'Execute Package'
     steps:
-    - template: python-setup.yaml
-
     - script: |
         cd ./transforms_sample
         python -m build
