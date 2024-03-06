@@ -6,6 +6,8 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Hellow, CI!
-  displayName: 'Run a one-line script'
+jobs:
+- job: LintJob
+  displayName: 'Execute Lint'
+  steps:
+  - template: templates/lint.yaml
