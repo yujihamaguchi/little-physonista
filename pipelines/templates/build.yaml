@@ -1,6 +1,6 @@
 steps:
   - script: |
-      cd ${{ parameters.PROJECT_ROOT_DIR }}
+      cd $(PROJECT_ROOT_DIR)
       python -m build
     displayName: 'Build package'
     continueOnError: false
