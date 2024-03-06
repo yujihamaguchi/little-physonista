@@ -6,15 +6,18 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-jobs:
-- job: LintJob
-  displayName: 'Execute Lint'
-  steps:
-  - template: templates/lint.yaml
+stages:
+- stage: Lint
+  jobs:
+  - job: LintJob
+    displayName: 'Execute Lint'
+    steps:
+    - template: templates/lint.yaml
 
-- job: UnitTestJob
-  displayName: 'Execute Unit Test'
-  dependsOn: LintJob
-  condition: succeeded('LintJob')
-  steps:
-  - template: templates/unit-test.yaml
+- stage: UnitTest
+  condition: succeeded()
+  jobs:
+  - job: UnitTestJob
+    displayName: 'Execute Unit Test'
+    steps:
+    - template: templates/unit-test.yaml
