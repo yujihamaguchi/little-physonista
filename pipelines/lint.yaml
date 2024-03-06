@@ -1,0 +1,25 @@
+trigger:
+  branches:
+    include:
+    - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hellow, Lint!
+  displayName: 'Run a one-line script'
+
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.8'
+    addToPath: true
+
+- script: python -m pip install --upgrade pip
+  displayName: 'Upgrade pip'
+
+- script: pip install ./transforms_sample/
+  displayName: 'Install libraries'
+
+- script: flake8 ./transforms_sample/utils.py
+  displayName: 'Run Flake8'
