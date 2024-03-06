@@ -11,4 +11,4 @@ stages:
   - stage: BuildAndPublish
     condition: succeeded()
     jobs:
-      - template: templates/build-and-publish.yaml
+      - template: templates/build-and-publish-jobs.yaml
