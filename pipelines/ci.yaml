@@ -6,9 +6,12 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- template: templates/python-setup.yaml
-
 stages:
-- template: templates/common-stages.yaml
-- template: templates/package-stages.yaml
+- stage: Integration
+  jobs: 
+  - job: PythonSetupJob
+    displayName: 'Setup Python'
+    steps:
+    - template: templates/python-setup.yaml
+  - template: templates/common-stages.yaml
+  - template: templates/package-stages.yaml
