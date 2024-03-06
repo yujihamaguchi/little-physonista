@@ -7,5 +7,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
+- template: templates/python-setup.yaml
 - template: templates/common-stages.yaml
 - template: templates/package-stages.yaml

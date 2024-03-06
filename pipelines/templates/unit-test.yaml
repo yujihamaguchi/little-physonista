@@ -1,7 +1,5 @@
 steps:
 
-- template: python-setup.yaml
-
 - script: pytest ./transforms_sample/utils.py
   displayName: 'Run Unit Test'
   continueOnError: false
