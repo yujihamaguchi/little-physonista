@@ -7,9 +7,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-- stage: Integration
-  steps:
-  - template: templates/python-setup.yaml
+- stage: Validation
   jobs:
-  - template: templates/common-stages.yaml
-  - template: templates/package-stages.yaml
+  - template: templates/validation-jobs.yaml
+- stage: BuildAndPublish
+  jobs:
+  - template: templates/build-and-publish-jobs.yaml
