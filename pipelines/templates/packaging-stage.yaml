@@ -5,7 +5,7 @@ stages:
   - job: PackagingJob
     displayName: 'Execute Packaging'
     steps:
-    - template: templates/python-setup.yaml
+    - template: python-setup.yaml
 
     - script: |
         cd ./transforms_sample
