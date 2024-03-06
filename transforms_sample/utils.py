@@ -11,7 +11,7 @@ def remove_leading_spaces(s: str) -> str:
     ("\tleading tab", "leading tab"),
     ("   \t mixed spaces and tab", "mixed spaces and tab"),
     ("no_leading_space", "no_leading_space"),
-    ("　全角スペース", "全角スペース ")
+    ("　全角スペース", "全角スペース")
 ])
 def test_remove_leading_whitespace(test_input, expected):
     assert remove_leading_spaces(test_input) == expected
