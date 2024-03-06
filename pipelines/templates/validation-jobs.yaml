@@ -1,0 +1,12 @@
+jobs:
+- job: LintJob
+  condition: succeeded()
+  displayName: 'Execute Lint'
+  steps:
+  - template: lint.yaml
+
+- job: UnitTestJob
+  condition: succeeded()
+  displayName: 'Execute Unit Test'
+  steps:
+  - template: unit-test.yaml
