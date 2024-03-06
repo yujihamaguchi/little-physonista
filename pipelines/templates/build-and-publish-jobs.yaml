@@ -1,0 +1,8 @@
+jobs:
+  - job: BuildAndPublishJob
+    displayName: 'Build package and publish'
+    condition: succeeded()
+    steps:
+      - template: python-setup.yaml
+      - template: build.yaml
+      - template: publish.yaml
