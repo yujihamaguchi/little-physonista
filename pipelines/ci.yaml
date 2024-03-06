@@ -11,3 +11,10 @@ jobs:
   displayName: 'Execute Lint'
   steps:
   - template: templates/lint.yaml
+
+- job: UnitTestJob
+  displayName: 'Execute Unit Test'
+  dependsOn: LintJob
+  condition: succeeded('LintJob')
+  steps:
+  - template: templates/unit-test.yaml
