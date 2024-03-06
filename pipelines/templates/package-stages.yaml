@@ -8,6 +8,7 @@ stages:
     - script: |
         cd ./transforms_sample
         python -m build
+
 - stage: Upload
   condition: succeeded()
   jobs:
