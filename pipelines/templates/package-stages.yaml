@@ -6,7 +6,11 @@ stages:
     displayName: 'Build package'
     steps:
     - script: |
+        pwd
+        ls -l
         cd ./transforms_sample
+        pwd
+        ls -l
         python -m build
 
 - stage: Upload
