@@ -8,10 +8,8 @@ pool:
 
 stages:
 - stage: Integration
-  jobs: 
-  - job: PythonSetupJob
-    displayName: 'Setup Python'
-    steps:
-    - template: templates/python-setup.yaml
+  steps:
+  - template: templates/python-setup.yaml
+  jobs:
   - template: templates/common-stages.yaml
   - template: templates/package-stages.yaml
