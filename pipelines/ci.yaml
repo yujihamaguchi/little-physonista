@@ -6,4 +6,5 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+stages:
 - template: templates/common-stages.yaml
