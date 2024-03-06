@@ -5,6 +5,7 @@ jobs:
       - template: python-setup.yaml
       - template: lint.yaml
   - job: UnitTestJob
+    dependsOn: LintJob
     condition: succeeded()
     displayName: 'Unit test'
     steps:
