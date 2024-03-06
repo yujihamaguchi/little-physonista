@@ -1,5 +1,5 @@
 stages:
-- stage: Package
+- stage: Build
   condition: succeeded()
   jobs:
   - job: BuildJob
@@ -8,10 +8,12 @@ stages:
     - script: |
         cd ./transforms_sample
         python -m build
+- stage: Upload
+  condition: succeeded()
+  jobs:
   - job: UploadJob
-    displayName: 'Upload package to Azure Artifacts'
+    displayName: 'Upload package'
     steps:
     - script: |
         cd ./transforms_sample
         python -m twine upload --repository-url https://pkgs.dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_packaging/sample-feed/pypi/upload/ --username "unused" --password $(System.AccessToken) dist/*
-      displayName: 'Upload package to Azure Artifacts'
