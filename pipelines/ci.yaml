@@ -1,3 +1,10 @@
+parameters:
+  - name: REPOSITORY_ADDRESS
+    type: string
+    default: 'https://pkgs.dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_packaging/sample-feed/pypi/upload/'
+  - name: PROJECT_ROOT_DIR
+    type: string
+    default: './transforms_sample'
 trigger:
   branches:
     include:

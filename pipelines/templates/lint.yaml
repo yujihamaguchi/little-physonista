@@ -1,4 +1,5 @@
 steps:
-  - script: flake8 ./transforms_sample/utils.py
+  - script: flake8 ${{ parameters.PROJECT_ROOT_DIR }}/utils.py
     displayName: 'Run Flake8'
     continueOnError: false
+
