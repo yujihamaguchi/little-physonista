@@ -1,17 +1,6 @@
 steps:
-- script: echo Hellow, Unit Test!
-  displayName: 'Run a one-line script'
 
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.8'
-    addToPath: true
-
-- script: python -m pip install --upgrade pip
-  displayName: 'Upgrade pip'
-
-- script: pip install ./transforms_sample/
-  displayName: 'Install libraries'
+- template: python-setup.yaml
 
 - script: pytest ./transforms_sample/utils.py
   displayName: 'Run Unit Test'
