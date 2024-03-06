@@ -1,6 +1,6 @@
 steps:
   - script: |
-      cd ./transforms_sample
+      cd ./transforms_samplesss
       python -m build
     displayName: 'Build package'
     continueOnError: false
