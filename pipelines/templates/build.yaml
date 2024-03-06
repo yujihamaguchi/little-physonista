@@ -1,0 +1,6 @@
+steps:
+- script: |
+    cd ./transforms_sample
+    python -m build
+  displayName: 'Build package'
+  continueOnError: false

@@ -1,12 +1,13 @@
 jobs:
 - job: LintJob
   condition: succeeded()
-  displayName: 'Execute Lint'
+  displayName: 'Lint'
   steps:
+  - template: python-setup.yaml
   - template: lint.yaml
-
 - job: UnitTestJob
   condition: succeeded()
-  displayName: 'Execute Unit Test'
+  displayName: 'Unit test'
   steps:
+  - template: python-setup.yaml
   - template: unit-test.yaml
