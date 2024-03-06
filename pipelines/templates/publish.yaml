@@ -1,6 +1,6 @@
 steps:
   - script: |
-      cd ${{ parameters.PROJECT_ROOT_DIR }}
-      python -m twine upload --repository-url ${{ parameters.REPOSITORY_ADDRESS }} --username "unused" --password $(System.AccessToken) dist/*
+      cd $(PROJECT_ROOT_DIR)
+      python -m twine upload --repository-url $(REPOSITORY_ADDRESS) --username "unused" --password $(System.AccessToken) dist/*
     displayName: 'Publish package'
     continueOnError: false

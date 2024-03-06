@@ -1,4 +1,4 @@
 steps:
-  - script: pytest ${{ parameters.PROJECT_ROOT_DIR }}/utils.py
+  - script: pytest $(PROJECT_ROOT_DIR)/utils.py
     displayName: 'Run Unit Test'
     continueOnError: false
