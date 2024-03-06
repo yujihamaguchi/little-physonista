@@ -1,4 +1,4 @@
 steps:
-- script: pytest ./transforms_sample/utils.py
-  displayName: 'Run Unit Test'
-  continueOnError: false
+  - script: pytest ./transforms_sample/utils.py
+    displayName: 'Run Unit Test'
+    continueOnError: false
