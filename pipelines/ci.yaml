@@ -8,3 +8,4 @@ pool:
 
 stages:
 - template: templates/common-stages.yaml
+  template: templates/packaging-stage.yaml
