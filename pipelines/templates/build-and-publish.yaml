@@ -1,18 +1,15 @@
 jobs:
-- job: BuildJob
+- job: BuildAndPublishJob
+  displayName: 'Build package and publish'
   condition: succeeded()
-  displayName: 'Build package'
   steps:
   - template: python-setup.yaml
   - script: |
       cd ./transforms_sample
       python -m build
+    displayName: 'Build package'
 
-- job: UploadJob
-  condition: succeeded()
-  displayName: 'Upload package'
-  steps:
-  - template: python-setup.yaml
   - script: |
       cd ./transforms_sample
       python -m twine upload --repository-url https://pkgs.dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_packaging/sample-feed/pypi/upload/ --username "unused" --password $(System.AccessToken) dist/*
+    displayName: 'Publish package'
