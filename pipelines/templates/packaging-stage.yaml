@@ -1,0 +1,17 @@
+- stage: Packaging
+  condition: succeeded()
+  jobs:
+  - job: PackagingJob
+    displayName: 'Execute Packaging'
+    steps:
+    - template: templates/python-setup.yaml
+
+    - script: |
+        cd ./transforms_sample
+        python -m build
+      displayName: 'Build package'
+
+    - script: |
+        cd ./transforms_sample
+        python -m twine upload --repository-url https://pkgs.dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_packaging/sample-feed/pypi/upload/ --username "unused" --password $(System.AccessToken) dist/*
+      displayName: 'Upload package to Azure Artifacts'
