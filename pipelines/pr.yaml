@@ -1,3 +1,7 @@
+parameters:
+  - name: PROJECT_ROOT_DIR
+    type: string
+    default: './transforms_sample'
 trigger: none
 pool:
   vmImage: 'ubuntu-latest'
