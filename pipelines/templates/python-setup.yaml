@@ -5,5 +5,9 @@ steps:
       addToPath: true
   - script: python -m pip install --upgrade pip
     displayName: 'Upgrade pip'
+  - script: pwd
+    displayName: 'Debug'
+  - script: ls -l
+    displayName: 'Debug'
   - script: pip install $(PROJECT_ROOT_DIR)
     displayName: 'Install libraries'
