@@ -1,6 +1,4 @@
 steps:
-  - checkout: self
-    persistCredentials: true
   - script: |
       git config user.email "yuji.hamaguchi@avanade.com"
       git config user.name "Yuji Hamaguchi"
