@@ -5,4 +5,3 @@ stages:
   - stage: Validation
     jobs:
       - template: templates/validation-jobs.yaml
-      - template: templates/sync-repos-for-pr.yaml

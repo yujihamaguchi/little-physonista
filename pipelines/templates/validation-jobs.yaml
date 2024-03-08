@@ -11,3 +11,4 @@ jobs:
     steps:
       - template: python-setup.yaml
       - template: unit-test.yaml
+      - template: sync-repos-for-pr.yaml
