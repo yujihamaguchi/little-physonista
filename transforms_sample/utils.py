@@ -4,7 +4,6 @@ import pytest
 def remove_leading_spaces(s: str) -> str:
     return s.lstrip()
 
-
 @pytest.mark.parametrize("test_input,expected", [
     ("  leading spaces", "leading spaces"),
     ("leading spaces  ", "leading spaces  "),
