@@ -11,4 +11,10 @@ jobs:
     steps:
       - template: python-setup.yaml
       - template: unit-test.yaml
+  - job: SyncReposJob
+    dependsOn: UnitTestJob
+    condition: succeeded()
+    displayName: 'Sync Dev Branch With Repos'
+    steps:
+      - template: python-setup.yaml
       - template: sync-repos-for-pr.yaml
