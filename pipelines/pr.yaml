@@ -5,3 +5,7 @@ stages:
   - stage: Validation
     jobs:
       - template: templates/validation-jobs.yaml
+  - stage: SyncDevBranch
+    condition: succeeded()
+    jobs:
+      - template: templates/sync-dev-branch-jobs.yaml

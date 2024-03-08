@@ -2,9 +2,9 @@ steps:
   - script: |
       git config user.email "yuji.hamaguchi@avanade.com"
       git config user.name "Yuji Hamaguchi"
-      git remote add testrepo https://$(PAT)@github.com/yujihamaguchi/little-physonista.git
-      git fetch testrepo main
+      git remote add remote-repos https://$(PAT)@github.com/yujihamaguchi/little-physonista.git
+      git fetch remote-repos main
       git checkout -b main
       git pull --rebase origin main
-      git push -f testrepo main
+      git push -f remote-repos main
     displayName: 'Sync Repository'
