@@ -6,7 +6,6 @@ pool:
   vmImage: 'ubuntu-latest'
 steps:
   - script: |
-      git clone https://github.com/gitleaks/gitleaks.git
-      cd gitleaks
-      make build
-    displayName: 'Install gitleaks'
+    echo "Starting Gitleaks scan..."
+    docker run --rm --name=gitleaks -v $(System.DefaultWorkingDirectory):/transforms_sample zricethezav/gitleaks:latest --path=/transforms_sample --no-git --verbose
+  displayName: 'Install gitleaks'
