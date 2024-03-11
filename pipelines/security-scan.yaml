@@ -1,0 +1,12 @@
+trigger:
+  branches:
+    include:
+      - main
+pool:
+  vmImage: 'ubuntu-latest'
+steps:
+  - script: |
+      git clone https://github.com/gitleaks/gitleaks.git
+      cd gitleaks
+      make build
+    displayName: 'Install gitleaks'
