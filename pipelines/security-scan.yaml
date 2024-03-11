@@ -9,4 +9,5 @@ steps:
       git clone https://github.com/gitleaks/gitleaks.git
       cd gitleaks
       make build
+      gitleaks detect -v
     displayName: 'Install gitleaks'
