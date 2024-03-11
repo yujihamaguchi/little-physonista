@@ -7,5 +7,5 @@ pool:
 steps:
   - script: |
       docker pull zricethezav/gitleaks:latest
-      docker run -v ${path_to_host_folder_to_scan}:/transforms_sample zricethezav/gitleaks:latest detect --source="/transforms_sample" -v
+      docker run -v $(System.DefaultWorkingDirectory):/transforms_sample zricethezav/gitleaks:latest detect --source="/transforms_sample" -v
     displayName: 'Install gitleaks'
