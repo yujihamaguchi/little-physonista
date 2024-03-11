@@ -1,4 +1,8 @@
 jobs:
+  - job: SecurityScanJob
+    displayName: 'Security Scan'
+    steps:
+      - template: security-scan.yaml
   - job: LintJob
     displayName: 'Lint'
     steps:

@@ -1,11 +1,5 @@
-trigger:
-  branches:
-    include:
-      - main
-pool:
-  vmImage: 'ubuntu-latest'
 steps:
   - script: |
       docker pull zricethezav/gitleaks:latest
       docker run -v $(System.DefaultWorkingDirectory):/transforms_sample zricethezav/gitleaks:latest detect --source="/transforms_sample"
-    displayName: 'Install gitleaks'
+    displayName: 'Security Scan'
