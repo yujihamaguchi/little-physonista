@@ -16,6 +16,3 @@ def remove_leading_spaces(s: str) -> str:
 ])
 def test_remove_leading_whitespace(test_input, expected):
     assert remove_leading_spaces(test_input) == expected
-
-
-# AWS_ACCESS_KEY_DUMMY = AKIAXXXXXXXXXXXXXXXX

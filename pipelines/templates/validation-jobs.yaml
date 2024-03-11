@@ -4,6 +4,8 @@ jobs:
     steps:
       - template: security-scan.yaml
   - job: LintJob
+    dependsOn: SecurityScanJob
+    condition: succeeded()
     displayName: 'Lint'
     steps:
       - template: python-setup.yaml
