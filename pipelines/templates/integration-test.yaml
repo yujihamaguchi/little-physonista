@@ -1,0 +1,4 @@
+steps:
+  - script: pytest $(PROJECT_ROOT_DIR)/it.py
+    displayName: 'Run Integration Test'
+    continueOnError: false

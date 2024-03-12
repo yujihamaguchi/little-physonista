@@ -8,6 +8,10 @@ stages:
   - stage: Validation
     jobs:
       - template: templates/validation-jobs.yaml
+  - stage: IntegrationTest
+    condition: succeeded()
+    jobs:
+      - template: templates/integration-test-jobs.yaml
   - stage: BuildAndPublish
     condition: succeeded()
     jobs:
