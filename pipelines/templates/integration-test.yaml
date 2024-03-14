@@ -1,4 +1,10 @@
 steps:
+  - task: AzureKeyVault@2
+    inputs:
+      azureSubscription: 'azdo-pat-keyvault'
+      KeyVaultName: 'test-yuriemori'
+      SecretsFilter: '*'
+      RunAsPreJob: false
   - script: |
       export AUTHORIZED_USER_PAT=$(AuthorizedUserPAT)
       export UNAUTHORIZED_USER_PAT=$(UnauthorizedUserPAT)
