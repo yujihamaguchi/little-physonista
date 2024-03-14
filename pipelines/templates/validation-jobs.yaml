@@ -1,4 +1,8 @@
 jobs:
+  - job: SetUpSecretJob
+    displayName: 'Setup Secret'
+    steps:
+      - template: secret-setpu.yaml
   - job: SecurityScanJob
     displayName: 'Security Scan'
     steps:
