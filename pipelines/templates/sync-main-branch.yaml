@@ -4,7 +4,7 @@ steps:
   - script: |
       git config user.email "yuji.hamaguchi@avanade.com"
       git config user.name "Yuji Hamaguchi"
-      git remote add remote-repos https://$(PAT)@github.com/yujihamaguchi/little-physonista.git
+      git remote add remote-repos $(REMOTE_REPOSITORY_ADDRESS)
       git fetch remote-repos main
       git checkout -b main
       git pull --rebase origin main
