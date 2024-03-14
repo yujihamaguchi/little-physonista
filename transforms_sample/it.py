@@ -42,6 +42,7 @@ def delete_work_item(id, user):
 
 
 def test_delete_work_item_by_authorized_user():
+    print(authorized_user)
     response = delete_work_item(id, authorized_user)
     assert response.status_code == 200
 
