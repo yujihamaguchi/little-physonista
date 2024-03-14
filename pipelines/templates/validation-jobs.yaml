@@ -1,11 +1,5 @@
 jobs:
-  - job: SetUpSecretJob
-    displayName: 'Setup Secret'
-    steps:
-      - template: secret-setup.yaml
   - job: SecurityScanJob
-    dependsOn: SetUpSecretJob
-    condition: succeeded()
     displayName: 'Security Scan'
     steps:
       - template: security-scan.yaml
