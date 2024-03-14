@@ -19,4 +19,4 @@ stages:
   - stage: SyncMainBranch
     condition: succeeded()
     jobs:
-      - template: templates/sync-dev-branch-jobs.yaml
+      - template: templates/sync-main-branch-jobs.yaml
