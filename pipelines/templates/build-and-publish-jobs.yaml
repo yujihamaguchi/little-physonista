@@ -6,4 +6,3 @@ jobs:
       - template: python-setup.yaml
       - template: build.yaml
       - template: publish.yaml
-      - template: sync-repos.yaml
