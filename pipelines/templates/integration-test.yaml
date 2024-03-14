@@ -1,4 +1,7 @@
 steps:
-  - script: pytest $(PROJECT_ROOT_DIR)/it.py
+  - script: |
+      export AUTHORIZED_USER_PAT = $(AuthorizedUserPAT)
+      export UNAUTHORIZED_USER_PAT = $(UnauthorizedUserPAT)
+      pytest $(PROJECT_ROOT_DIR)/it.py
     displayName: 'Run Integration Test'
     continueOnError: false
