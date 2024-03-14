@@ -1,0 +1,6 @@
+jobs:
+  - job: SyncMainBranchJob
+    displayName: 'Sync main branch with remote repository'
+    condition: succeeded()
+    steps:
+      - template: sync-main-branch.yaml
