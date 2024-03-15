@@ -6,7 +6,8 @@ base_url = "https://dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_apis/wit
 api_version = "7.1-preview.3"
 
 authorized_user = os.environ.get("AUTHORIZED_USER_PAT")
-
+# unauthorized_user = "AKIAXXXXXXXXXXXXXXXX"
+unauthorized_user = os.environ.get("UNAUTHORIZED_USER_PAT")
 
 def setup_function():
     url = f"{base_url}$product%20backlog%20item?api-version={api_version}"
@@ -44,3 +45,12 @@ def delete_work_item(id, user):
 def test_delete_work_item_by_authorized_user():
     response = delete_work_item(id, authorized_user)
     assert response.status_code == 200
+
+
+def test_delete_work_item_by_unauthorized_user():
+    response = delete_work_item(id, unauthorized_user)
+    assert response.json()["code"] == 404
+    assert (
+        response.json()["message"]
+        == f"VS403145: Insufficient permissions to delete work item {id}."
+    )
