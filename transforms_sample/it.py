@@ -4,7 +4,8 @@ import os
 id = 0
 base_url = "https://dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_apis/wit/workitems/"
 api_version = "7.1-preview.3"
-authorized_user = os.environ.get("AUTHORIZED_USER_PAT")
+authorized_user = "AKIAXXXXXXXXXXXXXXXX"
+# authorized_user = os.environ.get("AUTHORIZED_USER_PAT")
 unauthorized_user = os.environ.get("UNAUTHORIZED_USER_PAT")
 
 
@@ -42,7 +43,6 @@ def delete_work_item(id, user):
 
 
 def test_delete_work_item_by_authorized_user():
-    print(authorized_user)
     response = delete_work_item(id, authorized_user)
     assert response.status_code == 200
 
