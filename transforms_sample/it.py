@@ -5,6 +5,7 @@ id = 0
 base_url = "https://dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_apis/wit/workitems/"
 api_version = "7.1-preview.3"
 
+# authorized_user = "AKIAXXXXXXXXXXXXXXXX"
 authorized_user = os.environ.get("AUTHORIZED_USER_PAT")
 unauthorized_user = os.environ.get("UNAUTHORIZED_USER_PAT")
 
