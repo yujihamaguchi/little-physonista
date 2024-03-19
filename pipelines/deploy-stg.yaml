@@ -16,7 +16,7 @@ stages:
           - script: pip install $(PROJECT_ROOT_DIR)
             displayName: 'Install libraries'
           - script: |
-              zip -r app.zip $(PROJECT_ROOT_DIR) -x "*.git*"
+              zip -r app.zip $(PROJECT_ROOT_DIR)/ -x "*.git*"
             displayName: 'Package application'
           - publish: $(System.DefaultWorkingDirectory)
             artifact: drop
