@@ -43,4 +43,4 @@ stages:
                     appName: 'egaku-staging'
                     package: $(Pipeline.Workspace)/drop/app.zip
                     deploymentMethod: zipDeploy
-                    startUpCommand: 'gunicorn -b :80 app:app'
+                    startUpCommand: 'gunicorn -b :8000 app:app'
