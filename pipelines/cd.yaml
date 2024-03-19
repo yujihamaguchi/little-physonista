@@ -22,5 +22,11 @@ stages:
             displayName: 'Package application'
           - publish: $(System.DefaultWorkingDirectory)
             artifact: drop
-  - template: templates/deploy-stg.yaml
-  - template: templates/deploy-prod.yaml
+  - stage: DeployToStaging
+    condition: succeeded()
+    jobs:
+    - template: templates/deploy-stg.yaml
+  - stage: DeployToProduction
+    condition: succeeded()
+    jobs:
+    - template: templates/deploy-prod.yaml
