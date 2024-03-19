@@ -1,5 +1,6 @@
 from flask import Flask
 import os
+import configparser
 
 app = Flask(__name__)
 
@@ -7,8 +8,10 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     message = os.getenv('MESSAGE', 'Hello World')
-    timestamp = os.getenv('TIMESTAMP', 'Tue, Mar 19, 2024  5:08:17 PM')
-    return "{} ({})".format(message, timestamp)
+    config = configparser.ConfigParser()
+    config.read('setup.cfg')
+    version = config.get('metadata', 'version')
+    return "{} ({})".format(message, version)
 
 
 if __name__ == '__main__':
