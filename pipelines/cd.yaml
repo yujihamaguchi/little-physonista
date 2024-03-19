@@ -29,6 +29,8 @@ stages:
       parameters:
         variableGroupName: 'Stg-Secrets'
         environment: 'staging'
+        appName: 'egaku-staging'
+        message: "$(stagingEnvMessage)"
   - stage: DeployToProduction
     condition: succeeded()
     jobs:

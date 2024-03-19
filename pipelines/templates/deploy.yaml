@@ -12,12 +12,12 @@ jobs:
                 versionSpec: '3.8'
               displayName: 'Use Python version'
             - task: AzureWebApp@1
-              displayName: 'Deploy Azure Web App : egaku'
+              displayName: 'Deploy Azure Web App'
               inputs:
                 azureSubscription: 'ConnectionForDeploy'
-                appName: 'egaku-staging'
+                appName: ${{ parameters.appName }}
                 package: $(Pipeline.Workspace)/drop/app.zip
                 deploymentMethod: zipDeploy
                 startUpCommand: 'gunicorn -b :8000 app:app'
                 appSettings: |
-                  -MESSAGE "$(stagingEnvMessage)"
+                  -MESSAGE ${{ parameters.message }}
