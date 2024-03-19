@@ -11,7 +11,7 @@ def hello():
     config = configparser.ConfigParser()
     config.read('setup.cfg')
     version = config.get('metadata', 'version')
-    return "{} (ver. {})".format(message, version)
+    return "{} ( ver. {} )".format(message, version)
 
 
 if __name__ == '__main__':
