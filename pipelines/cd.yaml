@@ -34,7 +34,7 @@ stages:
   - stage: DeployToProduction
     condition: succeeded()
     jobs:
-    - template: templates/deploy-prod.yaml
+    - template: templates/deploy.yaml
       parameters:
         variableGroupName: 'Prod-Secrets'
         environment: 'production'
