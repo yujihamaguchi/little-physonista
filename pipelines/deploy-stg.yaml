@@ -18,6 +18,7 @@ stages:
           - script: |
               cd $(PROJECT_ROOT_DIR)
               zip -r app.zip . -x "*.git*"
+              cp ./app.zip ../
             displayName: 'Package application'
           - publish: $(System.DefaultWorkingDirectory)
             artifact: drop
