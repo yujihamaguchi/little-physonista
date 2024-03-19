@@ -49,7 +49,7 @@ stages:
                     appSettings: |
                       -MESSAGE $(env)
   - stage: DeployToProduction
-    dependsOn: Build
+    dependsOn: DeployToStaging
     condition: succeeded()
     jobs:
       - deployment: DeploymentJob
