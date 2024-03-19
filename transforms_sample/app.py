@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     message = os.getenv('MESSAGE', 'Hello World')
-    return message
+    timestamp = os.getenv('TIMESTAMP', 'Tue, Mar 19, 2024  5:08:17 PM')
+    return "{} ({})".format(message, timestamp)
 
 
 if __name__ == '__main__':
