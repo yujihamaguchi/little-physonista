@@ -20,4 +20,4 @@ jobs:
                 deploymentMethod: zipDeploy
                 startUpCommand: 'gunicorn -b :8000 app:app'
                 appSettings: |
-                  -MESSAGE ${{ parameters.message }}
+                  -MESSAGE "${{ parameters.message }}"

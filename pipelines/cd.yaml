@@ -30,8 +30,13 @@ stages:
         variableGroupName: 'Stg-Secrets'
         environment: 'staging'
         appName: 'egaku-staging'
-        message: "$(stagingEnvMessage)"
+        message: $(stagingEnvMessage)
   - stage: DeployToProduction
     condition: succeeded()
     jobs:
     - template: templates/deploy-prod.yaml
+      parameters:
+        variableGroupName: 'Prod-Secrets'
+        environment: 'production'
+        appName: 'egaku-production'
+        message: "$(productionEnvMessage)"
