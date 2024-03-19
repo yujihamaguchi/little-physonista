@@ -1,0 +1,26 @@
+trigger:
+  - main
+pool:
+  vmImage: 'ubuntu-latest'
+stages:
+  - stage: GetPackage
+    jobs:
+      - job: GetPackageJob
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: '3.8'
+              addToPath: true
+          - script: python -m pip install --upgrade pip
+            displayName: 'Upgrade pip'
+          - script: pip install $(PROJECT_ROOT_DIR)
+            displayName: 'Install libraries'
+          - script: |
+              cd $(PROJECT_ROOT_DIR)
+              zip -r app.zip . -x "*.git*"
+              cp ./app.zip ../
+            displayName: 'Package application'
+          - publish: $(System.DefaultWorkingDirectory)
+            artifact: drop
+  - template: templates/deploy-stg.yaml
+  - template: templates/deploy-prod.yaml
