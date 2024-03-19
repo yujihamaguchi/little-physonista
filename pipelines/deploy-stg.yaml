@@ -27,6 +27,8 @@ stages:
     condition: succeeded()
     jobs:
       - deployment: DeploymentJob
+        variables:
+          - group: Stg-Secrets
         environment: staging
         strategy:
           runOnce:
@@ -45,4 +47,4 @@ stages:
                     deploymentMethod: zipDeploy
                     startUpCommand: 'gunicorn -b :8000 app:app'
                     appSettings: |
-                      -MESSAGE $(MESSAGE)
+                      -MESSAGE $(env)
