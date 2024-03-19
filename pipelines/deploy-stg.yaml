@@ -44,3 +44,5 @@ stages:
                     package: $(Pipeline.Workspace)/drop/app.zip
                     deploymentMethod: zipDeploy
                     startUpCommand: 'gunicorn -b :8000 app:app'
+                    appSettings: |
+                      -MESSAGE $(MESSAGE)
