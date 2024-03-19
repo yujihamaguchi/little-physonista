@@ -25,20 +25,20 @@ stages:
     condition: succeeded()
     jobs:
       - deployment: DeploymentJob
-    environment: staging
-    strategy:
-      runOnce:
-        deploy:
-          steps:
-            - task: UsePythonVersion@0
-              inputs:
-                versionSpec: '3.8'
-              displayName: 'Use Python version'
-            - task: AzureWebApp@1
-              displayName: 'Deploy Azure Web App : egaku'
-              inputs:
-                azureSubscription: 'ConnectionForDeploy'
-                appName: 'egaku-staging'
-                package: $(Pipeline.Workspace)/drop/app.zip
-                deploymentMethod: zipDeploy
-                startUpCommand: 'gunicorn --bind=0.0.0.0 --workers=4 startup:app'
+        environment: staging
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: UsePythonVersion@0
+                  inputs:
+                    versionSpec: '3.8'
+                  displayName: 'Use Python version'
+                - task: AzureWebApp@1
+                  displayName: 'Deploy Azure Web App : egaku'
+                  inputs:
+                    azureSubscription: 'ConnectionForDeploy'
+                    appName: 'egaku-staging'
+                    package: $(Pipeline.Workspace)/drop/app.zip
+                    deploymentMethod: zipDeploy
+                    startUpCommand: 'gunicorn --bind=0.0.0.0 --workers=4 startup:app'
