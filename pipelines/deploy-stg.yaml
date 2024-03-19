@@ -39,5 +39,5 @@ stages:
               runtimeStack: 'PYTHON|3.8'
               package: $(Pipeline.Workspace)/drop/app.zip
               startUpCommand: 'gunicorn -b :80 app:app'
-              appSettings: |
-                -MESSAGE 'Hello staging!'
+              appSettings: 'MESSAGE=$(MESSAGE)'
+
