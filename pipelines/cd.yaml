@@ -28,6 +28,7 @@ stages:
     - template: templates/deploy.yaml
       parameters:
         variableGroupName: 'Stg-Secrets'
+        environment: 'staging'
   - stage: DeployToProduction
     condition: succeeded()
     jobs:

@@ -1,7 +1,7 @@
 jobs:
   - deployment: DeploymentJob
     variables:
-      - group: ${{ parameters.variableGroupName }}
+      - group: Stg-Secrets
     environment: staging
     strategy:
       runOnce:
