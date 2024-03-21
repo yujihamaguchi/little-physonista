@@ -1,5 +1,11 @@
-trigger:
-  - main
+trigger: none
+resources:
+  pipelines:
+    - pipeline: CI
+      source: CI
+      trigger:
+        branches:
+          - main
 pool:
   vmImage: 'ubuntu-latest'
 stages:
