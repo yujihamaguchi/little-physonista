@@ -1,11 +1,34 @@
 trigger:
 - main
 
+resources:
+- repo: self
+
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- script: |
-    docker pull yujihamaguchitest.azurecr.io/my-python-image:latest
-    docker run --rm yujihamaguchitest.azurecr.io/my-python-image:latest pytest ./utils.py
-  displayName: 'Run pytest on Docker image'
+variables:
+  imageName: 'my-python-image'
+  tag: 'latest'
+  registryName: 'yujihamaguchitest.azurecr.io'
+  serviceName: 'ConnectionForDeploy'
+
+jobs:
+- job: BuildAndPushImage
+  displayName: 'Build and Push Docker Image'
+  steps:
+  - task: Docker@2
+    displayName: 'Login to Azure Container Registry'
+    inputs:
+      command: login
+      containerRegistry: $(serviceName)
+
+  - task: Docker@2
+    displayName: 'Build and Push Docker image'
+    inputs:
+      command: buildAndPush
+      repository: $(registryName)/$(imageName)
+      dockerfile: '**/Dockerfile'
+      containerRegistry: $(serviceName)
+      tags: |
+        $(tag)
