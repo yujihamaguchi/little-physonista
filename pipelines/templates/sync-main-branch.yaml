@@ -10,7 +10,3 @@ steps:
       git pull --rebase origin main
       git push remote-repos main:main --force
     displayName: 'Sync main branch with remote repository'
-  - task: ManualValidation@0
-    timeoutInMinutes: 120
-    inputs:
-      instructions: "Hi, please validate"
