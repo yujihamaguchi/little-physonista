@@ -1,0 +1,11 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    docker pull yujihamaguchitest.azurecr.io/my-python-image:latest
+    docker run --rm yujihamaguchitest.azurecr.io/my-python-image:latest pytest ./utils.py
+  displayName: 'Run pytest on Docker image'
