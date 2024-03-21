@@ -10,8 +10,6 @@ steps:
       git pull --rebase origin main
       git push remote-repos main:main --force
     displayName: 'Sync main branch with remote repository'
-  - script: echo "デモの為の一時停止"
-  - task: ManualIntervention@0
+  - task: ManualIntervention@8
     inputs:
-      instructions: '確認してください。問題なければ続行し、問題があれば中止してください。'
-      onTimeout: 'reject' # オプション: 'reject' (デフォルト), 'resume'    
+      instructions: 'デモの為の一時停止'
