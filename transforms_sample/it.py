@@ -6,7 +6,6 @@ base_url = "https://dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_apis/wit
 api_version = "7.1-preview.3"
 
 authorized_user = os.environ.get("AUTHORIZED_USER_PAT")
-# unauthorized_user = "AWS_ACCESS_KEY_DUMMY = AKIAXXXXXXXXXXXXXXXX"
 unauthorized_user = os.environ.get("UNAUTHORIZED_USER_PAT")
 
 
