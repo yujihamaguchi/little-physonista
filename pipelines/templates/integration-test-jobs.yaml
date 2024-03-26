@@ -1,6 +1,5 @@
 jobs:
   - job: IntegrationTestJob
     displayName: 'Integration test'
-    condition: succeeded()
     steps:
       - template: integration-test.yaml
