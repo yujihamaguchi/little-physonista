@@ -11,7 +11,7 @@ variables:
   imageName: 'my-python-image'
   tag: 'latest'
   registryName: 'yujihamaguchitest.azurecr.io'
-  serviceName: 'ConnectionForDeploy'
+  serviceName: 'docker-connection'
 
 jobs:
 - job: BuildAndPushImage
