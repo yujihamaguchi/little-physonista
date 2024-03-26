@@ -2,8 +2,8 @@ steps:
   - checkout: self
     fetchDepth: 0
   - script: |
-      git config user.email "yuji.hamaguchi@avanade.com"
-      git config user.name "Yuji Hamaguchi"
+      git config user.email "taro.ci@avanade.com"
+      git config user.name "Taro CI"
       git remote add remote-repos $(REMOTE_REPOSITORY_ADDRESS)
       git fetch remote-repos
       git checkout -b $(System.PullRequest.SourceBranch)

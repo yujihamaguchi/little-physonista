@@ -14,7 +14,7 @@ jobs:
             - task: AzureWebApp@1
               displayName: 'Deploy Azure Web App'
               inputs:
-                azureSubscription: 'ConnectionForDeploy'
+                azureSubscription: $(APP_SERVICE_CONNECTION_SERVICE_NAME)
                 appName: ${{ parameters.appName }}
                 package: $(Pipeline.Workspace)/drop/app.zip
                 deploymentMethod: zipDeploy

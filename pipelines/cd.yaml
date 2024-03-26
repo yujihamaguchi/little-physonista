@@ -6,9 +6,12 @@ resources:
       trigger:
         branches:
           - main
+
 pool:
   vmImage: 'ubuntu-latest'
+
 stages:
+  # 本来は CI で生成したパッケージをそのままデプロイしたいところだが、デモ用に手を抜いて間に合わせのジョブをつくっている
   - stage: GetPackage
     jobs:
       - job: GetPackageJob
@@ -28,8 +31,8 @@ stages:
             displayName: 'Package application'
           - publish: $(System.DefaultWorkingDirectory)
             artifact: drop
+
   - stage: DeployToStaging
-    condition: succeeded()
     jobs:
     - template: templates/deploy.yaml
       parameters:
@@ -37,8 +40,8 @@ stages:
         environment: 'staging'
         appName: 'egaku-staging'
         message: "$(stagingEnvMessage)"
+
   - stage: DeployToProduction
-    condition: succeeded()
     jobs:
     - template: templates/deploy.yaml
       parameters:
