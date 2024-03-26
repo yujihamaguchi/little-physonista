@@ -8,7 +8,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  imageName: 'my-python-image:$(Build.BuildId)'
+  imageName: 'my-python-image'
   registryName: 'yujihamaguchitest.azurecr.io'
   serviceName: 'docker-connection'
 
