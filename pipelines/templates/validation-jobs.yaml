@@ -8,7 +8,6 @@ jobs:
     condition: succeeded()
     displayName: 'Lint'
     steps:
-      - template: python-setup.yaml
       - template: lint.yaml
   - job: UnitTestJob
     dependsOn: LintJob
