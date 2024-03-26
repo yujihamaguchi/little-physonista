@@ -12,7 +12,7 @@ jobs:
     displayName: 'Build and Push Docker image'
     inputs:
       command: buildAndPush
-      repository: $(registryName)/$(imageName)
+      repository: $(imageName)
       dockerfile: '**/Dockerfile'
       containerRegistry: $(serviceConnectionName)
       tags: |
