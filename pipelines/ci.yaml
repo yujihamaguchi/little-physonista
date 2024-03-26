@@ -6,7 +6,7 @@ pool:
   vmImage: 'ubuntu-latest'
 variables:
   imageName: 'my-python-image'
-  registryName: 'virtualegaku.azurecr.io/yujihamaguchitest.azurecr.io'
+  registryName: 'virtualegaku.azurecr.io'
   tag: latest
   serviceConnectionName: 'docker-connection'
 stages:
