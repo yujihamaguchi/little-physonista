@@ -6,6 +6,6 @@ steps:
       containerRegistry: docker-connection
   - script: |
       docker pull virtualegaku.azurecr.io/yujihamaguchitest.azurecr.io/my-python-image:latest
-      docker run --rm virtualegaku.azurecr.io/yujihamaguchitest.azurecr.io/my-python-image:latest flake8 $(PROJECT_ROOT_DIR)/utils.py
+      docker run --rm virtualegaku.azurecr.io/yujihamaguchitest.azurecr.io/my-python-image:latest flake8 ./utils.py
     displayName: 'Run Flake8'
     continueOnError: false
