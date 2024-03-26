@@ -8,8 +8,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  imageName: 'my-python-image'
-  tag: 'latest'
+  imageName: 'my-python-image:$(Build.BuildId)'
   registryName: 'yujihamaguchitest.azurecr.io'
   serviceName: 'docker-connection'
 
@@ -31,4 +30,4 @@ jobs:
       dockerfile: '**/Dockerfile'
       containerRegistry: $(serviceName)
       tags: |
-        $(tag)
+        latest
