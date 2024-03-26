@@ -4,4 +4,3 @@ steps:
       docker pull $(fQIN)
       docker run --rm $(fQIN) pytest ./utils.py
     displayName: 'Run Unit Test'
-    continueOnError: false
