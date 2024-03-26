@@ -7,7 +7,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  fQIN: 'my-python-image'
+  fQIN: $(CONTAINER_REGISTORY_ADDRESS)/$(CONTAINER_IMAGE_NAME):$(CONTAINER_IMAGE_TAG)
 
 stages:
   - stage: DockerBuildAndPush
