@@ -14,5 +14,4 @@ jobs:
     condition: succeeded()
     displayName: 'Unit test'
     steps:
-      - template: python-setup.yaml
       - template: unit-test.yaml

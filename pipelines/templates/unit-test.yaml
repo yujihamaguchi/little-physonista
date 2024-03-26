@@ -1,4 +1,7 @@
 steps:
-  - script: pytest $(PROJECT_ROOT_DIR)/utils.py
+  - template: login-registory.yaml
+  - script: |
+      docker pull $(registryName)/$(imageName):$(tag)
+      docker run --rm $(registryName)/$(imageName):$(tag) pytest ./utils.py
     displayName: 'Run Unit Test'
     continueOnError: false

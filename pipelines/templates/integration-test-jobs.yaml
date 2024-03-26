@@ -3,5 +3,4 @@ jobs:
     displayName: 'Integration test'
     condition: succeeded()
     steps:
-      - template: python-setup.yaml
       - template: integration-test.yaml

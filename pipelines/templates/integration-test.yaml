@@ -5,9 +5,11 @@ steps:
       KeyVaultName: 'test-yuriemori'
       SecretsFilter: '*'
       RunAsPreJob: false
+  - template: login-registory.yaml
   - script: |
       export AUTHORIZED_USER_PAT=$(AuthorizedUserPAT)
       export UNAUTHORIZED_USER_PAT=$(UnauthorizedUserPAT)
-      pytest $(PROJECT_ROOT_DIR)/it.py
+      docker pull $(registryName)/$(imageName):$(tag)
+      docker run --rm $(registryName)/$(imageName):$(tag) pytest ./it.py
     displayName: 'Run Integration Test'
     continueOnError: false
