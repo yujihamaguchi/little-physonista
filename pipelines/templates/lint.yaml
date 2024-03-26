@@ -1,7 +1,7 @@
 steps:
   - template: login-registory.yaml
   - script: |
-      docker pull virtualegaku.azurecr.io/yujihamaguchitest.azurecr.io/my-python-image:latest
-      docker run --rm virtualegaku.azurecr.io/yujihamaguchitest.azurecr.io/my-python-image:latest flake8 ./utils.py
+      docker pull $(registryName)/$(imageName):$(tag)
+      docker run --rm $(registryName)/$(imageName):$(tag) flake8 ./utils.py
     displayName: 'Run Flake8'
     continueOnError: false

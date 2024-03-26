@@ -4,6 +4,11 @@ trigger:
       - main
 pool:
   vmImage: 'ubuntu-latest'
+variables:
+  imageName: 'my-python-image'
+  registryName: 'virtualegaku.azurecr.io/yujihamaguchitest.azurecr.io'
+  tag: latest
+  serviceConnectionName: 'docker-connection'
 stages:
   - stage: Validation
     jobs:
