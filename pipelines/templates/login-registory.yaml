@@ -3,4 +3,4 @@ steps:
     displayName: 'Login to Azure Container Registry'
     inputs:
       command: login
-      containerRegistry: docker-connection
+      containerRegistry: $(serviceConnectionName)
