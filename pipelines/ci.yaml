@@ -2,30 +2,30 @@ trigger:
   branches:
     include:
       - main
+
 pool:
   vmImage: 'ubuntu-latest'
+
 variables:
-  imageName: 'my-python-image'
-  registryName: 'virtualegaku.azurecr.io'
-  tag: latest
-  serviceConnectionName: 'docker-connection'
+  fQIN: 'my-python-image'
+
 stages:
   - stage: DockerBuildAndPush
     jobs:
       - template: templates/docker-build-and-push-jobs.yaml
+
   - stage: Validation
-    condition: succeeded()
     jobs:
       - template: templates/validation-jobs.yaml
+
   - stage: IntegrationTest
-    condition: succeeded()
     jobs:
       - template: templates/integration-test-jobs.yaml
+
   - stage: BuildAndPublish
-    condition: succeeded()
     jobs:
       - template: templates/build-and-publish-jobs.yaml
+
   - stage: SyncMainBranch
-    condition: succeeded()
     jobs:
       - template: templates/sync-main-branch-jobs.yaml

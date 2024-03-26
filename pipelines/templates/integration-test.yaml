@@ -7,10 +7,10 @@ steps:
       RunAsPreJob: false
   - template: login-registory.yaml
   - script: |
-      docker pull $(registryName)/$(imageName):$(tag)
+      docker pull $(fQIN)
       docker run  \
       -e AUTHORIZED_USER_PAT=$(AuthorizedUserPAT) \
       -e UNAUTHORIZED_USER_PAT=$(UnauthorizedUserPAT) \
-      --rm $(registryName)/$(imageName):$(tag) pytest ./it.py
+      --rm $(fQIN) pytest ./it.py
     displayName: 'Run Integration Test'
     continueOnError: false

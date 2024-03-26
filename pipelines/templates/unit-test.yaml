@@ -1,7 +1,7 @@
 steps:
   - template: login-registory.yaml
   - script: |
-      docker pull $(registryName)/$(imageName):$(tag)
-      docker run --rm $(registryName)/$(imageName):$(tag) pytest ./utils.py
+      docker pull $(fQIN)
+      docker run --rm $(fQIN) pytest ./utils.py
     displayName: 'Run Unit Test'
     continueOnError: false
