@@ -10,7 +10,11 @@ variables:
   tag: latest
   serviceConnectionName: 'docker-connection'
 stages:
+  - stage: DockerBuildAndPush
+    jobs:
+      - template: templates/docker-build-and-push-jobs.yaml
   - stage: Validation
+    condition: succeeded()
     jobs:
       - template: templates/validation-jobs.yaml
   - stage: IntegrationTest
