@@ -1,5 +1,7 @@
 steps:
   - script: |
       docker pull zricethezav/gitleaks:latest
-      docker run -v $(System.DefaultWorkingDirectory):/transforms_sample zricethezav/gitleaks:latest detect --source="/transforms_sample"
+      docker run -v \
+      $(System.DefaultWorkingDirectory):/transforms_sample zricethezav/gitleaks:latest \
+      detect --source="/transforms_sample"
     displayName: 'Security Scan'

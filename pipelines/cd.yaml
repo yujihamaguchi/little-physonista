@@ -11,7 +11,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-  # 本来は CI で生成したパッケージをそのままデプロイしたいところだが、デモ用に手を抜いて間に合わせのジョブをつくっている
+  # 本来は CI で生成したパッケージをそのままデプロイしたいところだが、デモ用に間に合わせのジョブをつくっている状態
   - stage: GetPackage
     jobs:
       - job: GetPackageJob

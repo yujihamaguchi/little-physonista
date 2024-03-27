@@ -1,8 +1,8 @@
 steps:
   - task: AzureKeyVault@2
     inputs:
-      azureSubscription: 'azdo-pat-keyvault'
-      KeyVaultName: 'test-yuriemori'
+      azureSubscription: $(KEY_VAULT_SERVICE_CONNECTION_NAME)
+      KeyVaultName: $(KEY_VAULT_NAME)
       SecretsFilter: '*'
       RunAsPreJob: false
   - template: login-registory.yaml
