@@ -3,4 +3,4 @@ steps:
     displayName: 'Login to Azure Container Registry'
     inputs:
       command: login
-      containerRegistry: $(CONTAINER_REGISTORY_CONNECTION_SERVICE_NAME)
+      containerRegistry: $(CONTAINER_REGISTORY_SERVICE_CONNECTION_NAME)
