@@ -15,4 +15,4 @@
     - CI パイプラインの DockerBuildAndPush で "##[warning]No data was written into the file /home/vsts/work/_temp/task_outputs/build_1711502963952.txt" のような警告がでますが、[Azure Pipeline Task のバグ](https://github.com/microsoft/azure-pipelines-tasks/issues/17893)のようです
     - PR パイプラインのトリガーは pr.yaml では none となっており、[main ブランチのポリシーの Build Validation](https://dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_settings/repositories?_a=policiesMid&repo=88b5906d-723f-4860-8785-d7c145770d64&refs=refs/heads/main)で設定しています。そういう習わしのようです
     - 想定 Foundry の Code Repository であるの外部リポジトリは、私個人の Github のリポジトリを使っています、使い続けて頂いても構いませんが、今の PAT の有効期限は 2024/6/8 です
-    - CD パイプラインのデプロイ先の App Service （ egaku-staging, egaku-production ）は有料なので使う時に作成し、使い終わったら削除する運用にしています。
+    - CD パイプラインのデプロイ先の App Service （ egaku-staging, egaku-production ）は有料なので使う時に作成し、使い終わったら削除する運用にしています。（ CD パイプラインも disable にしています ）
