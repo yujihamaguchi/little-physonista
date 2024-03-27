@@ -1,9 +1,16 @@
 trigger: none
 
+variables:
+  fQIN: $(CONTAINER_REGISTORY_ADDRESS)/$(CONTAINER_IMAGE_NAME):$(CONTAINER_IMAGE_TAG)
+
 pool:
   vmImage: 'ubuntu-latest'
 
 stages:
+  - stage: DockerBuildAndPush
+    jobs:
+      - template: templates/docker-build-and-push-jobs.yaml
+
   - stage: Validation
     jobs:
       - template: templates/validation-jobs.yaml
