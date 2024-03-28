@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "connections_sharepointonline_name": {
+            "value": null
+        },
+        "workflows_sync_ingest_setting_name": {
+            "value": null
+        },
+        "workflows_sync_package_version_name": {
+            "value": null
+        },
+        "workflows_sync_project_settings_name": {
+            "value": null
+        },
+        "workflows_sync_schedule_setting_name": {
+            "value": null
+        },
+        "workflows_sync_monitoring_setting_name": {
+            "value": null
+        },
+        "integrationAccounts_com_avanade_yuji_hamaguchi_test_name": {
+            "value": null
+        },
+        "templateSpecs_yuji_hamaguchi_sync_workspace_setting_group_name": {
+            "value": null
+        },
+        "connections_sharepointonline_externalid": {
+            "value": null
+        }
+    }
+}
