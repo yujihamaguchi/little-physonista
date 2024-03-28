@@ -6,7 +6,7 @@
             "RID": "ri.scheduler.main.schedule.adaef448-09cf-4006-941b-fcda8620efca",
             "version": "d7a10fe97a59 (current)",
             "targetDataSet": "/小田原福祉会-be776f/DataSource - ほのぼのNEXT/datasets/raw/",
-            "condition": "指定された時間・間隔 At 01:00am (Asia/Tokyo)"
+            "condition": "指定された時間・間隔 At 02:00am (Asia/Tokyo)"
         },
         {
             "name": "(prod)Schedule Build for DataIntegration",
@@ -14,7 +14,7 @@
             "RID": "ri.scheduler.main.schedule.f6ff0c9f-10a4-44f5-a65a-a55f14634851",
             "version": "d7a10fe97a59 (current)",
             "targetDataSet": "/小田原福祉会-be776f/DataSourceIntegration/jobs/",
-            "condition": "指定されたデータセットが更新された時 /小田原福祉会-be776f/DataSource - ほのぼのNEXT/datasets/raw"
+            "condition": "指定されたデータセットが更新された時 /小田原福祉会-be776f/DataSource - ぼのぼのNEXT/datasets/raw"
         }        
     ]
 }
