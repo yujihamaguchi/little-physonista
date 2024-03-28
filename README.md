@@ -15,3 +15,32 @@
     - CI パイプラインの DockerBuildAndPush で "##[warning]No data was written into the file /home/vsts/work/_temp/task_outputs/build_1711502963952.txt" のような警告がでますが、[Azure Pipeline Task のバグ](https://github.com/microsoft/azure-pipelines-tasks/issues/17893)のようです
     - PR パイプラインのトリガーは pr.yaml では none となっており、[main ブランチのポリシーの Build Validation](https://dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_settings/repositories?_a=policiesMid&repo=88b5906d-723f-4860-8785-d7c145770d64&refs=refs/heads/main)で設定しています。そういう習わしのようです
     - 想定 Foundry の Code Repository であるの外部リポジトリは、私個人の Github のリポジトリを使っています、使い続けて頂いても構いませんが、今の PAT の有効期限は 2024/6/8 です
+- Logic Apps
+  - Logic App 概要
+    - 前提
+      ロジックアップは全て egaku アプリケーションの基盤である Foundry の API から情報を取得して Azure Repos に格納したり、 sharepoint で一覧化するものです。
+      フェーズ 1.0 では Foundry API の調査（フィジビリティチェック）を並行して行っておりその調査結果を適用するのは フェーズ 2.0 以降という仕切りになっており、
+      Foundry API から取得できると想定される情報（ JSON ）を sharepoint に格納し、それを取得する実装になっています。
+    - sync-project-settings: egaku プロジェクトの設定を Azure Repos に同期し、sharepoint で一覧化する
+    - sync-schedule-settings: egaku のデータインジェストやビルドスケジュールを Azure Repos に同期し、sharepoint で一覧化する
+    - sync-ingest-setting: egaku のデータインジェスト設定を Azure Repos に同期し、sharepoint で一覧化する
+    - sync-monitoring-setting: egaku のモニタリング設定を Azure Repos に同期し、sharepoint で一覧化する
+    - sync-package-version: egaku の個社別デプロイ済みパッケージ、バージョン情報を sharepoint で一覧化する
+  - リソースの場所
+    - ロジックアプリのテンプレート
+      - [リポジトリ](https://dev.azure.com/Japan-Apps-and-Infra/_git/SOMPO-HD-DevOps) の logic_app_template ディレクトリ配下でバージョン管理しています（ とはいえ、logic app の機能を用いてエクスポートしたこのファイルをインポートして処理を実行した実績はありません。現状の logic app は森さんのアクセス権割り当て済み）
+    - Foundry API から取得できる想定の JSON 
+      - [リポジトリ](https://dev.azure.com/Japan-Apps-and-Infra/_git/SOMPO-HD-DevOps) の infrastructure ディレクトリ配下でバージョン管理しています
+    - sharepoint のリスト（森さんに共有済み）
+      - Project List: https://avanade-my.sharepoint.com/personal/yuji_hamaguchi_avanade_com/Lists/egaku%20v1%20Project%20List/AllItems.aspx?env=WebViewList
+      - Schedule List: https://avanade-my.sharepoint.com/personal/yuji_hamaguchi_avanade_com/Lists/Schedule%20List?env=WebViewList
+      - Ingest List: https://avanade-my.sharepoint.com/personal/yuji_hamaguchi_avanade_com/Lists/Ingest%20List?env=WebViewList
+      - Monitoring List: https://avanade-my.sharepoint.com/personal/yuji_hamaguchi_avanade_com/Lists/Monitoring%20List?env=WebViewList
+      - Package Version List: https://avanade-my.sharepoint.com/personal/yuji_hamaguchi_avanade_com/Lists/Package%20Version%20List/AllItems.aspx?env=WebViewList
+  - テスト
+    - 以下のシナリオが実行可能な状態を保っています（これらをリグレッションテストと見做しています）
+      - Sprint 2 Review( p10 ): https://sompo-dl.box.com/s/0ejhxcj7cdu96wkvpumxjdj2xplzpbpy
+      - Sprint 6 Review( p21 ): https://sompo-dl.box.com/s/t2055v24wki3fl133qpgxqsgx6gqsj1n
+  - その他
+    - 全てのロジックアプリの起点が「HTTP 要求の受信時」になっているが特に意図はありません。Azure Portal での手動実行を想定しています。
+    - *-settings 系は特に重複する処理が多いですが、API から取得する情報が想定のものであるため、実際のデータでは処理が変わるところも多いと考えリファクタリングはしていません。
