@@ -1,0 +1,22 @@
+{
+    "packageVersions": [
+        {
+            "clinetCompanyName": "A社",
+            "version": "1.0.42",
+            "deployTimeStamp": "2024/3/22 13:30:00",
+            "relatedURL": "https://dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_workitems/edit/995"
+        },
+        {
+            "clinetCompanyName": "B社",
+            "version": "1.0.43",
+            "deployTimeStamp": "2024/3/25 10:00:00",
+            "relatedURL": "https://dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_workitems/edit/996"
+        },
+        {
+            "clinetCompanyName": "C社",
+            "version": "1.0.44",
+            "deployTimeStamp": "2024/3/29 18:00:00",
+            "relatedURL": "https://dev.azure.com/Japan-Apps-and-Infra/SOMPO-HD-DevOps/_workitems/edit/997"
+        }
+    ]
+}
