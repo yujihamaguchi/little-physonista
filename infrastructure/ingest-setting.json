@@ -1,7 +1,7 @@
 {
     "ingests": [
         {
-            "dataSetName": "blob_ingest",
+            "dataSetName": "blob_ingests",
             "description": "インジェスト先Azure Blob コンテナ",
             "path": "/小田原福祉会-be776f",
             "updateVia": "1",
@@ -9,7 +9,7 @@
             "schedule": "1"
         },
         {
-            "dataSetName": "delete_blobs",
+            "dataSetName": "delete_blob",
             "description": "Azure Blobの古いファイルを削除するためのインジェストデータセット",
             "path": "/小田原福祉会-be776f",
             "updateVia": "1",
